@@ -1529,7 +1529,7 @@ function jump(k){
   if(i>=7)openDm();
   if(i<6)cap(k);
 }
-const START='m';   /* last screen worked on; set to 'shelf' for a clean start */
+const START='shelf';   /* last screen worked on; set to 'shelf' for a clean start */
 const startAt=()=>{const h=location.hash.slice(1),k=h==='shelf'?'shelf':CAP[h]?h:START;if(k==='shelf'){if(stage.classList.contains('on'))$('back').click()}else jump(k)};
 addEventListener('hashchange',startAt);startAt();
 </script>
