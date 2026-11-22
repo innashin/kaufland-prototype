@@ -1012,14 +1012,7 @@ button.oth .ico{width:24px;height:24px;flex:none}
         <div class="shb" style="padding-top:14px">
           <div class="cta2" style="margin-top:0"><button class="o" id="saCart">Zum Warenkorb</button><button class="r" id="saCo">Zur Kasse</button></div>
           <div class="fq" id="saFq" style="margin-top:14px"></div>
-          <div class="cph">Coupons aktivieren und XTRA sparen</div>
-          <div class="cpc"><div class="cpcb"><div class="cpt"><span class="cpb">-3€ Coupon <i>X</i></span><span class="info" style="margin:0">i</span></div>
-            <div class="cpm1">3 € Rabatt auf deinen Warenkorb sichern!</div>
-            <div class="cps">Nur auf dem Online-Marktplatz; ab 3,01 € Einkaufswert</div>
-            <div class="cps" style="color:#888;margin-top:8px">Rabatt gewährt durch Kaufland</div></div>
-            <button class="cpa" id="saAct"><span class="coin" style="width:30px;height:30px;flex:none"></span><span id="saActT">Für 300 Treuepunkte aktivieren</span></button></div>
-          <div class="cpv"><b>327</b> Treuepunkte verfügbar</div>
-          <div class="rech" style="margin-top:26px">Das könnte dich auch interessieren</div><div class="rl" id="rec3"></div>
+          <div class="rech" style="margin-top:24px">Das könnte dich auch interessieren</div><div class="rl" id="rec3"></div>
         </div>
       </div>
       <div class="sheet" id="sSel" style="max-height:88%">
@@ -1216,7 +1209,6 @@ function renderSheet(){
   const c=calc();
   $('saFq').style.display=rec()?'flex':'none';
   $('saFq').innerHTML=`<svg class="ico" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.5-5.800L20 8.500M20 4v4.500h-4.500M20 12a8 8 0 0 1-13.500 5.800L4 15.500M4 20v-4.500h4.500"/></svg><div><b>Wiederkehrende Lieferung · alle ${weeks} Wochen</b><br>Erste Lieferung ${DATE}. Jederzeit pausierbar oder kündbar.</div>`;
-  const b=$('saAct');b.classList.toggle('on',redeem);$('saActT').textContent=redeem?'Aktiviert ✓ (300 Treuepunkte)':`Für ${maxPts()} Treuepunkte aktivieren`;
 }
 function renderBk(){
   const c=calc(),n=qty;
@@ -1352,7 +1344,6 @@ $('add').onclick=()=>{
 $('saCart').onclick=showBk;
 document.querySelectorAll('#scroll .cartw,#scroll .cartw2').forEach(c=>{c.style.cursor='pointer';c.setAttribute('role','button');c.setAttribute('aria-label','Warenkorb');c.onclick=showBk});
 $('saCo').onclick=()=>openCo(2);
-$('saAct').onclick=()=>{xtra=true;redeem=!redeem;renderAll()};
 $('bkBack').onclick=hideBk;
 $('bkGo').onclick=()=>openCo(2);
 $('bkEdit').onclick=()=>{document.querySelectorAll('#sfChips .chip').forEach(x=>x.classList.toggle('sel',+x.dataset.w===weeks));openSheet('sFreq')};
